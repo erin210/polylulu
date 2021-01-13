@@ -52,7 +52,7 @@
                                 </li>
                                 <li class="navDott">．</li>
                                 <li class="polyStyle">
-                                    <a title="" href=""><span>POLY-STYLE</span><b>風格企劃</b></a>
+                                    <a title="" href="style.html"><span>POLY-STYLE</span><b>風格企劃</b></a>
                                     <div class="menu_in">
                                         <div class="wrap">
                                             <ul>
@@ -787,8 +787,8 @@
                                 <h6>Fill in the invoice information</h6>
                                 <div class="form-group mt-2 mb-0">
                                     <div class="custom-control custom-radio">
-                                        <input type="radio" name="invoice" class="custom-control-input" value="invoiceA" checked>
-                                        <label class="custom-control-label" for="invoice1">Member Portable Devices</label>
+                                        <input id="invoiceEN" type="radio" name="invoiceEN" class="custom-control-input" value="invoiceAEN" checked>
+                                        <label class="custom-control-label" for="invoiceEN">Member Portable Devices</label>
                                     </div>
                                 </div>
                                 <div class="form-group ml-4">
@@ -830,7 +830,7 @@
                     </div>
                     <div class="btn_g">
                         <a class="btn btn-outline-primary mx-1" href="shoppingcart.html" title="">回購物車</a>
-                        <a class="btn btn-primary mx-1" href="shoppingcheck2.html" title="">確認付款</a></div>
+                        <a class="btn btn-primary mx-1" href="shoppingcheckATM.html" title="">確認付款</a></div>
                 </div>
                 <div class="text-center mt-4 mb-5 form_en">
                     <div class="custom-control custom-checkbox my-4">
@@ -839,7 +839,7 @@
                     </div>
                     <div class="btn_g">
                         <a class="btn btn-outline-primary mx-1" href="shoppingcart.html" title="">Back to Cart</a>
-                        <a class="btn btn-primary mx-1" href="shoppingcheck2.html" title="">CHECKOUT</a></div>
+                        <a class="btn btn-primary mx-1" href="shoppingcheckATM.html" title="">CHECKOUT</a></div>
                 </div>
             </div>
         </section>
@@ -1089,7 +1089,7 @@
     });
     //store
 
-    $.getJSON("Source/js/zh-cht/vendor/store.json", function(storeArray) {
+    $.getJSON("http://www.json-generator.com/api/json/get/cqHOKbjzLS?indent=2", function(storeArray) {
         var optionHtml_store = "";
         for (var i = 0; i < storeArray.length; i++) {
             optionHtml_store += '<option value="' + i + '">' + storeArray[i].store + '</option>';
