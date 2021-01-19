@@ -12,13 +12,35 @@
     <link href="./Source/css/zh-cht/fonts/icomoon/icons.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/slick.css" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/slick-theme.css" rel="stylesheet" />
-    <link href="./Source/css/zh-cht/vendor/magnific-popup.all.min.css" rel="stylesheet" />
-    <link href="./Source/css/zh-cht/vendor/magnific-popup.css" rel="stylesheet" />
+    <link href="./Source/css/zh-cht/vendor/magnific-popup.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/main.css?20201012" rel="stylesheet" />
     <script src="./Source/js/zh-cht/vendor/jquery-3.3.1.min.js?20190506"></script>
 </head>
 
-<body class="flex_bg">
+<body>
+    <div id="goTopMenu">
+        <ul class="goTop_pc">
+            <li>
+                <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u class="icon-i_media_fb"></u></i><span>FACEBOOK</span></a>
+            </li>
+            <li>
+                <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u class="icon-i_media_ig"></u></i><span>INSTAGRAM</span></a>
+            </li>
+            <li>
+                <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u class="icon-i_media_line"></u></i><span>LINE</span></a>
+            </li>
+            <li>
+                <a title="" href="store.html" target="_blank"><i class="icon"><u class="icon-i_media_shop"></u></i><span>STORE</span></a>
+            </li>
+            <li>
+                <a title="" href="" target="_blank"></a><i class="icon"><u class="icon-i_media_app"></u></i><span>POLYLULU APP</span></a>
+            </li>
+            <li>
+                <a title="" href="" class="goTop"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+            </li>
+        </ul>
+        <a title="" href="" class="goTop goTop_m"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
+    </div>
     <header>
         <div class="wrap">
             <a title="" href="default.html" class="logo">
@@ -117,7 +139,7 @@
                                     </div>
                                 </li>
                                 <li>
-                                    <a title="" href="" style="color:#EC4C74;">SALE</a>
+                                    <a title="" href="productsale.html" style="color:#EC4C74;">SALE</a>
                                     <div class="menu_in">
                                         <a title="" href="productsale.html">▸ SALE夏季特賣【3件49折】</a>
                                         <a title="" href="productsale.html">▸ SALE夏季特賣【2件69折】</a>
@@ -213,7 +235,7 @@
                                     <span>小計 : NTD.  <b>1,208</b> </span>
                                 </div>
                                 <div class="menuCart_btn">
-                                    <a title="" href="shoppingcart.html" class="btn btn-primary">查看購物車</a>
+                                    <a title="shoppingcart.html" href="shoppingcart.html" class="btn btn-primary">查看購物車</a>
                                 </div>
                             </div>
                         </div>
@@ -224,104 +246,72 @@
         </div>
     </header>
     <!-- Main Content op -->
-    <div id="mainArea" class="pageIn pageMember">
-        <div class="main">
-            <div class="sidebar navLeft navMember">
-                <div class="nav_m"><span>會員中心</span><u class="icon-i_down"></u></div>
-                <ul>
-                    <li>
-                        <a href="member.html" title="">會員中心</a>
-                    </li>
-                    <li>
-                        <a href="orderlist.html" title="">訂單 / 退貨查詢</a>
-                    </li>
-                    <li>
-                        <a href="wishlist.html" title="">願望清單</a>
-                    </li>
-                    <li>
-                        <a href="modify.html" title="">會員資料維護</a>
-                    </li>
-                    <li>
-                        <a href="default.html" title="">登出</a>
-                    </li>
-                </ul>
-            </div>
-            <div class="content areaRight conMember">
-                <h1 class="mdTitle title_line mb-0">BONUS FOR YOU
-                    <span>購物金</span>
-                </h1>
-                <div class="sm_tit">
-                    <span>可用購物金<b class="text-danger">$</b><u>99,000</u></span>
+    <div id="mainArea" class="pageInfo">
+        <h1 class="mdTitle">HOW TO ORDER
+            <span>訂購流程</span>
+        </h1>
+        <section class="polyTab centerTab mt-5">
+            <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                <li class="nav-item">
+                    <a title="" class="nav-link active" id="tw-tab" data-toggle="pill" href="#tw" role="tab" aria-controls="tw" aria-selected="true">電話訂購</a>
+                </li>
+                <li class="nav-item">
+                    <a title="" class="nav-link" id="oversea-tab" data-toggle="pill" href="#oversea" role="tab" aria-controls="oversea" aria-selected="false">海外訂購</a>
+                </li>
+            </ul>
+            <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="tw" role="tabpanel" aria-labelledby="tw-tab">
+                    <h5 class="h5 font-weight-bold mb-2">02-27606658</h5>
+                    <p class="mb-5">POLYLULU為提供更便利的購物選擇，特別為國內買家提供電話訂購服務，服務專線『02-2760-6658』，客服人員將協助您進行代理線上購物，祝您購物愉快。</p>
+                    <h5 class="h5 font-weight-bold mb-2">電話購物流程</h5>
+                    <ol class="num_list mb-5">
+                        <li>如您不方便操作線上交易時，請直接撥打客服專線【02-2760-6658】，由客服人員為您逐步完成訂單。</li>
+                        <li>來電前，請先於POLYLULU官網頁面選定您所需要的商品貨號、顏色尺寸，以及欲購數量，以減少等候時間。</li>
+                        <li>如您已註冊為會員，請告知客服人員您的【EMAIL】、【手機】等資訊以便查詢使用；如您尚未註冊為會員，請依客服人員指示提供E-MAIL及基本資料，客服人員將會為您建立資料。</li>
+                        <li>確認訂單內容後，請告知客服人員：您的【收件人資訊】、【宅配地址】、【配送時段】與【其他備註事項】。</li>
+                        <li>為保障個資消費安全，本服務僅提供【貨到付款】方式結帳，貨到時請使用【現金支付】。（另須負擔手續費 $30）</li>
+                        <li>收到商品後如有不合適／瑕疵／錯誤的商品，請您於鑑賞期七日內透過客服電話申請退貨事宜，退貨後款項將轉為購物金，可保留於下次購物直接折抵使用，購物金無時間上的使用限制喔！</li>
+                    </ol>
                 </div>
-                <div class="infoArea table_in">
-
-                    <div class="warp">
-                        <table class="infoTable">
-                            <tr>
-                                <th>日期</th>
-                                <th>訂單編號</th>
-                                <th>購物金金額</th>
-                                <th>調整原因</th>
-                            </tr>
-                            <tr>
-                                <td>2020/05/26</td>
-                                <td>20080211125</td>
-                                <td>1000</td>
-                                <td>行促優惠</td>
-                            </tr>
-                            <tr>
-                                <td>2020/05/26</td>
-                                <td>20080211125</td>
-                                <td>1000</td>
-                                <td>行促優惠</td>
-                            </tr>
-                            <tr>
-                                <td>2020/05/26</td>
-                                <td>20080211125</td>
-                                <td>1000</td>
-                                <td>行促優惠</td>
-                            </tr>
-                        </table>
-                        <div class="info_txt float-right mt-0 mr-2 mb-2"><a href="aboutbonus.html" title="">如何獲得購物金</a><u class="icon-i_forget"></u></div>
-                    </div>
-                </div>
-                <div class="text-center mt-5">
-                    <a class="btn btn-primary d-inline-block show4sm" href="returncash.html" title="">申請退款</a>
-                    <a class="btn btn-primary d-inline-block popup-with-form show4pc" href="#returncash" title="">申請退款</a>
-                    <!-- popup op-->
-                    <div id="returncash" class="mfp-hide white-popup-block">
-                        <div class="popup_info">
-                            <div class="popup_info_scroll">
-                                <h1 class="basicTitle">REFUND<span>線上帳戶結清退款單</span></h1>
-                                <div class="infoBox">
-                                    <p>
-                                        <span>會員姓名 : 林筱美</span>
-                                        <span>退款金額 : <b class="text-danger">$990</b></span>
-                                        <span>電子郵件 : amy123@gmail.com</span>
-                                        <small class="remind">請完整填寫以下匯款帳戶資訊，將於7個工作天內，將款項退至指定帳戶中，感謝!</small>
-                                    </p>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="匯款戶名">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="匯款銀行">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="銀行代碼">
-                                    </div>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="銀行帳號">
-                                    </div>
-                                    <div class="text-center"><a class="btn btn-primary d-inline-block" href="#returncash" title="">送出退款單</a></div>
-
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- popup ed-->
+                <div class="tab-pane fade" id="oversea" role="tabpanel" aria-labelledby="oversea-tab">
+                    <p class="mb-5">海外的Ladies您好，為了滿足更多消費者的需求，POLYLULU特別推出海外購物服務，希望能讓海外買家也能享有愉快的購物體驗！此外，由於國外訂單的作業與台灣地區不同，請Ladies依照下列購物流程購買哦！</p>
+                    <h6 class="h6 font-weight-bold mb-3">Step 1.請先加入會員，並填寫會員基本資料</h6>
+                    <img src="http://photo.polylulu.com.tw/photo/about_us/how2order/oversea_1.jpg" alt="" class="img-fluid border mb-5">
+                    <h6 class="h6 font-weight-bold mb-3">Step 2.挑選您所喜愛的商品，選擇尺寸數量後加入購物車</h6>
+                    <img src="http://photo.polylulu.com.tw/photo/about_us/how2order/oversea_2.jpg" alt="" class="img-fluid border mb-5">
+                    <h6 class="h6 font-weight-bold mb-3">Step 3.點選購物車進行結帳，確認購買物品後，勾選【Overseas Delivery海外購物】，選擇下一步</h6>
+                    <img src="http://photo.polylulu.com.tw/photo/about_us/how2order/oversea_3.jpg" alt="" class="img-fluid border mb-5">
+                    <h6 class="h6 font-weight-bold mb-3">Step 4.選擇配送國家，並詳細填寫送貨資料且確認應付總金額後，進行線上刷卡</h6>
+                    <img src="http://photo.polylulu.com.tw/photo/about_us/how2order/oversea_4.jpg" alt="" class="img-fluid border mb-5">
+                    <h6 class="h6 font-weight-bold mb-3">Step 5.請輸入正確刷卡資訊</h6>
+                    <img src="http://photo.polylulu.com.tw/photo/about_us/how2order/oversea_5.jpg" alt="" class="img-fluid mb-5">
+                    <h6 class="h6 font-weight-bold mb-3">Step 6.完成海外訂單</h6>
+                    <section>
+                        <ul>
+                            <li class="row mb-2">
+                                <div class="col-md-2 pr-md-0"><span class="event_mark py-0">運送服務<i class="icon icon_arrow_right"><u class="icon-i_down"></u></i></span></div>
+                                <p class="col-md-10 px-md-0">因國外寄送耗時，一律採用航空包裹寄送，而各國進口關稅標準不同，若領取包裹時貴國欲收取商品之關稅， 需買家自行支付。</p>
+                            </li>
+                            <li class="row mb-2">
+                                <div class="col-md-2 pr-md-0"><span class="event_mark py-0">付款方式<i class="icon icon_arrow_right"><u class="icon-i_down"></u></i></span></div>
+                                <p class="col-md-10 px-md-0">僅接受【線上刷卡】<br>國外刷卡除美國運通卡及大來卡外，其它卡別皆能刷卡，如刷卡過程中遇多次無法刷卡成功，煩請更換信用卡再使用。</p>
+                            </li>
+                            <li class="row mb-2">
+                                <div class="col-md-2 pr-md-0"><span class="event_mark py-0">交易查詢<i class="icon icon_arrow_right"><u class="icon-i_down"></u></i></span></div>
+                                <p class="col-md-10 px-md-0">請直接使用官網訂單查詢系統，查詢您的訂單進度。</p>
+                            </li>
+                            <li class="row mb-2">
+                                <div class="col-md-2 pr-md-0"><span class="event_mark py-0">安排出貨<i class="icon icon_arrow_right"><u class="icon-i_down"></u></i></span></div>
+                                <p class="col-md-10 px-md-0">海外訂單不提供當日出貨服務，因需經過縝密的品檢，系統顯示已出貨狀態後，約3~5日(不含假日)會安排寄出。<br> 海外訂單統一訂單貨齊後再出貨，恕不接受併拆單服務
+                                    <br> 海外訂單皆經過嚴格品管，恕不提供退換貨服務，造成不便，敬請見諒
+                                </p>
+                            </li>
+                        </ul>
+                    </section>
                 </div>
             </div>
-        </div>
+        </section>
+
     </div>
     <!-- Main Content op -->
     <footer>
@@ -422,30 +412,5 @@
 <script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
 <script src="./Source/js/zh-cht/vendor/sticky-sidebar.min.js"></script>
 <script src="./Source/js/zh-cht/main.js"></script>
-<script type="text/javascript">
-    if ($(window).width() > 767) {
-        $(document).ready(function() {
-            $('.popup-with-form').magnificPopup({
-                type: 'inline',
-                preloader: false,
-                focus: '#name',
-
-                // When elemened is focused, some mobile browsers in some cases zoom in
-                // It looks not nice, so we disable it:
-                callbacks: {
-                    beforeOpen: function() {
-                        if ($(window).width() < 700) {
-                            this.st.focus = false;
-                        } else {
-                            this.st.focus = '#name';
-                        }
-                    }
-                }
-            });
-        });
-    } else {
-
-    }
-</script>
 
 </html>
