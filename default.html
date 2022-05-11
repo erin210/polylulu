@@ -18,6 +18,252 @@
 </head>
 
 <body>
+    <!-- 蓋版 op -->
+    <style>
+        .modal-dialog {
+            max-width: fit-content;
+            margin-top: calc(50vh - 300px);
+            /*視窗高度/2 - 圖片高度/2*/
+        }
+        
+        .modal-content {
+            background: transparent;
+            border: 0;
+        }
+        
+        .modal-body {
+            padding: 0;
+        }
+        
+        .modal-body>button.close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 99;
+        }
+        
+        @media screen and (max-width: 767px) {
+            .modal-dialog {
+                margin-top: calc(50vh - 55vw);
+                ;
+                /*視窗高度/2 - 圖片高度/2*/
+            }
+            #popup-default .modal-dialog {
+                max-width: 80%;
+            }
+            .poppic {
+                max-width: 100%;
+            }
+        }
+    </style>
+    <div id="adModal" class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <!-- Copy Coupon op-->
+                    <div class="copyCode">
+                        <style>
+                            /*copyCoupon*/
+                            
+                            .coupon_item {
+                                position: relative;
+                            }
+                            
+                            .coupon_item a {
+                                display: block;
+                            }
+                            
+                            .copyCoupon_wrap {
+                                width: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                text-align: center;
+                                /* display: flex; */
+                                margin-top: 465px;
+                                /* margin-left: 50px; */
+                                padding: 0 30px 0 50px;
+                                /* border: 1px solid #00f; */
+                            }
+                            
+                            .copyCoupon {
+                                position: relative;
+                                width: 100%;
+                                text-align: center;
+                                padding: 0 .5em;
+                                /* border: 1px solid #00f; */
+                            }
+                            
+                            .copyCoupon input {
+                                width: 70%;
+                                height: 36px;
+                                margin-left: -21px;
+                                color: #fdfffe;
+                                background-color: #cc4647;
+                                border: 0;
+                                text-align: center;
+                                padding: .5em 0;
+                                font-size: 16px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                /* border-radius: 12px; */
+                                opacity: 0;
+                                /* border: 1px solid #f00; */
+                            }
+                            
+                            .copyCoupon.code02 input {
+                                margin-top: 12px;
+                                margin-right: 44px;
+                            }
+                            
+                            .copyCoupon.code03 input {
+                                /* border: 1px solid #f00; */
+                                margin-top: 12px;
+                                margin-right: 16px;
+                            }
+                            
+                            .btn_copy {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 999;
+                                width: 100%;
+                                height: 100px;
+                                margin-top: 0;
+                                background-color: transparent;
+                                color: #efefef;
+                                cursor: pointer;
+                                font-size: 24px;
+                                font-family: 'Times New Roman', Times, serif !important;
+                                font-family: 'Century Gothic', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif !important;
+                                font-weight: bold;
+                                border: 0;
+                                /* border: 1px solid #f00; */
+                            }
+                            
+                            .btn_copy:focus {
+                                outline: none;
+                            }
+                            
+                            .code02 .btn_copy {
+                                margin-left: 133px;
+                            }
+                            
+                            .code03 .btn_copy {
+                                margin-left: 164px;
+                            }
+                            
+                            @media screen and (max-width: 767px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.4vw;
+                                    /* border: 1px solid #00f; */
+                                }
+                                .copyCoupon input {
+                                    left: 11.8vw;
+                                    width: 60%;
+                                    height: 1.7em;
+                                    margin-top: 7.85vw;
+                                    color: #fdfffe;
+                                    background-color: #cc4647;
+                                    border: 0;
+                                    padding: .5em 0;
+                                    font-size: 15px;
+                                    opacity: 0;
+                                    /* border: 1px solid #000; */
+                                }
+                                .btn_copy {
+                                    /* width: 100%; */
+                                    height: 25vw;
+                                    /* background-color: transparent; */
+                                    color: #efefef;
+                                    cursor: pointer;
+                                    font-size: 24px;
+                                    /* border: 1px solid #f00; */
+                                }
+                            }
+                            
+                            @media screen and (max-width: 375px) {
+                                .copyCoupon_wrap {
+                                    margin-top: 80.2vw;
+                                    /* border: 1px solid #00f; */
+                                }
+                            }
+                            
+                            @media screen and (max-width: 320px) {
+                                /* iphone5/SE */
+                                .copyCoupon_wrap {
+                                    margin-top: 80.5vw;
+                                }
+                                .copyCoupon input {
+                                    left: 9.2vw;
+                                    width: 65%;
+                                    margin-top: 6.2vw;
+                                    font-size: 13px;
+                                }
+                            }
+                        </style>
+                        <div class="coupon_item">
+                            <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=pim:2203010001&OB=D3">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220307/event-20220307-pc.jpg" class="poppic show4pc">
+                                <img src="https://photo.polylulu.com.tw/photo/act/coupon/20220307/event-20220307-m.jpg" class="poppic show4sm"></a>
+                            <div class="copyCoupon_wrap">
+                                <div class="copyCoupon code01">
+                                    <input type="text" value="MON0307" id="myInput">
+                                    <button class="btn_copy" onclick="copyCoupon()"></button>
+                                </div>
+                            </div>
+                        </div>
+                        <script type="text/javascript">
+                            //複製折扣碼
+                            var copyText = document.getElementById("myInput");
+                            var copyText1 = document.getElementById("myInput1");
+                            var copyText2 = document.getElementById("myInput2");
+
+                            var arrayCopy = [copyText, copyText1, copyText2];
+                            var arrayStr = ["MON0307", "MON0307", "MON0307"];
+
+                            $(".code01").val(arrayStr[0]);
+                            $(".code02").val(arrayStr[1]);
+                            $(".code03").val(arrayStr[2]);
+
+                            function copyEvent(e) {
+                                arrayCopy[e].select();
+                                arrayCopy[e].setSelectionRange(0, 99999)
+                                document.execCommand("copy");
+                                arrayCopy[e].setAttribute("value", "複製成功!");
+                                arrayCopy[e].setAttribute("style", "opacity: 1;");
+
+
+                                function test() {
+                                    arrayCopy[e].setAttribute("value", arrayStr[e]);
+                                    arrayCopy[e].setAttribute("style", "");
+                                }
+
+                                setTimeout(test, 2000);
+
+                            }
+
+                            function copyCoupon() {
+                                copyEvent(0);
+                            }
+
+                            function copyCoupon1() {
+                                copyEvent(1);
+                            }
+
+                            function copyCoupon2() {
+                                copyEvent(2);
+                            }
+                        </script>
+                    </div>
+                    <!-- Copy Coupon ed-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 蓋版 ed -->
     <div id="goTopMenu">
         <ul class="goTop_pc">
             <li>
@@ -42,6 +288,119 @@
         <a title="" href="" class="goTop goTop_m"><i class="icon"><u class="icon-i_gotop"></u></i><span>TOP</span></a>
     </div>
     <header class="headerMain hdBig">
+        <!-- 置頂 op -->
+        <style>
+            @keyframes topIn {
+                0% {
+                    margin-top: -100px;
+                    opacity: 0;
+                }
+                100% {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+            }
+            
+            @keyframes topOut {
+                0% {
+                    margin-top: 0;
+                    opacity: 1;
+                }
+                100% {
+                    margin-top: -70px;
+                    opacity: 0;
+                }
+            }
+            
+            .toptopBN {
+                display: none;
+            }
+            
+            .toptopBN.toptopBNIn {
+                display: block;
+                position: relative;
+                z-index: 99999;
+                width: 100vw;
+                height: fit-content;
+                overflow: hidden;
+                animation: topIn .5s forwards ease-in-out;
+            }
+            
+            .toptopBN.toptopBNOut {
+                animation: topOut .2s forwards ease-in-out!important;
+            }
+            
+            .toptopBN a {
+                display: inline-block;
+                max-width: 100%;
+                line-height: 0;
+                padding: 0;
+                margin: 0;
+                /* border: 1px solid #f00; */
+            }
+            
+            .toptopBN a img {
+                max-width: 100%;
+                display: block;
+            }
+            
+            .toptopBN .btnClose {
+                top: 0;
+                right: 16px;
+                font-size: 12px;
+            }
+            
+            .btnClose {
+                cursor: pointer;
+            }
+            
+            #mainArea.moveDown {
+                margin-top: 13vw !important;
+            }
+            
+            #mainArea.pageIndex.moveDown {
+                margin-top: calc(174px + 8.1vw) !important;
+            }
+            
+            @media screen and (max-width: 1199px) {
+                #mainArea.moveDown {
+                    margin-top: calc( 102px + 9vw)!important;
+                }
+                #mainArea.pageIndex.moveDown {
+                    margin-top: calc(110px + 8.1vw) !important;
+                }
+                .toptopBN .btnClose {
+                    top: 0;
+                    right: 0;
+                    font-size: 12px;
+                }
+            }
+            
+            @media screen and (max-width: 991px) {
+                #mainArea.pageIndex.moveDown {
+                    margin-top: calc(110px + 8.75vw) !important;
+                }
+            }
+            
+            @media screen and (max-width: 767px) {
+                #mainArea.moveDown {
+                    margin-top: calc( 102px + 19vw)!important;
+                }
+            }
+            
+            @media screen and (max-width: 320px) {
+                #mainArea.moveDown {
+                    margin-top: calc( 102px + 20.5vw)!important;
+                }
+            }
+        </style>
+        <div class="toptopBN"><span id="closeAD" class="btnClose"><i class="icon"><u class="icon-i_xx"></u></i></span>
+            <a href="">
+                <img src="https://photo.polylulu.com.tw/photo/Act/coupon/20220307/topBN-20220307-pc.jpg" class=" show4pc">
+                <img src="https://photo.polylulu.com.tw/photo/Act/coupon/20220307/topBN-20220307-m.jpg" class=" show4sm">
+            </a>
+        </div>
+        <!-- 置頂 ed -->
         <div class="wrap">
             <a title="" href="default.html" class="logo">
                 <img src="Source/images/zh-cht/icons/logo.png" title="" alt="" class="img-fluid">
@@ -70,48 +429,94 @@
                     <div class="navMain_bg">
                         <div class="navMain_scroll">
                             <ul>
-                                <li>
-                                    <a title="" href="productlist.html"><span>NEW-IN</span><b>最新商品</b></a>
-                                </li>
-                                <li class="navDott">．</li>
                                 <li class="polyStyle">
-                                    <a title="" href="style.html"><span>POLY-STYLE</span><b>風格企劃</b></a>
                                     <div class="menu_in">
                                         <div class="wrap">
                                             <ul>
-                                                <li><a title="" href="style.html" target="_self">BARBAPAPA泡泡先生</a></li>
-                                                <li><a title="" href="style.html" target="_self">冬季大勢LOOK</a></li>
-                                                <li><a title="" href="style.html" target="_self">丹寧派對</a></li>
-                                                <li><a title="" href="style.html" target="_self">暖心外套特輯</a></li>
-                                                <li><a title="" href="style.html" target="_self">男孩風格紋穿搭</a></li>
-                                                <li><a title="" href="style.html" target="_self">職場穿搭手冊</a></li>
-                                                <li><a title="" href="style.html" target="_self">居家好感生活</a></li>
-                                                <li><a title="" href="style.html" target="_self">下身顯瘦系列</a></li>
-                                                <li><a title="" href="style.html" target="_self">浪漫婚禮</a></li>
+                                                <li>
+                                                    <div class="menu_tit">每周新品NEW ARRIVAL</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=pim:1610040001" target="_self">0929新品上市</a></li>
                                             </ul>
-                                            <a title="" href="style.html" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
+                                            <a title="" href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599232101" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/00.jpg" title="" alt=""></a>
                                         </div>
                                     </div>
+                                    <a title="" href="/zh-cht/pol/productlist?KeyWord=cid:000000"><span>NEW-IN</span><b>最新商品 </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">風格企劃</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productstyle?KeyWord=pim:1610040001&amp;actno=20211102" target="_self">Push up!塑型推推丹寧系列</a></li>
+                                                <li><a title="" href="/zh-cht/pol/productstyle?KeyWord=pim:2111160001&amp;actno=20211223" target="_self">Pro_H發熱系列</a></li>
+                                            </ul>
+                                            <a title="" href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599232101" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/07.jpg" title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title="" href="productstyle?KeyWord=pim:1610040001&amp;actno=20211102"><span>POLY-STYLE</span><b>風格企劃 </b></a>
                                 </li>
                                 <li class="navDott">．</li>
                                 <li>
-                                    <a title="" href="productlist.html"><span>BEST</span><b>暢銷排行</b></a>
+                                    <a title="" href="/zh-cht/pol/productlist?KeyWord=pim:1610040001"><span>HOT-SALE</span><b>熱銷到貨 </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">ONSALE</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1" target="_self">初秋新品上市【88折】</a></li>
+                                            </ul>
+                                            <a title="" href="" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/06.jpg" title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title="" href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1"><span>SALE</span><b>SALE </b></a>
+                                </li>
+                                <li class="navDott">．</li>
+                                <li class="polyStyle pdAll">
+                                    <div class="menu_in">
+                                        <div class="wrap">
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">上衣TOP</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:111100" target="_self">上衣全系列</a></li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:111102" target="_self">雪紡</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">洋裝 DRESS</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:112200" target="_self">洋裝全系列</a></li>
+                                            </ul>
+                                            <ul>
+                                                <li>
+                                                    <div class="menu_tit">下身BOTTOM</div>
+                                                </li>
+                                                <li><a title="" href="/zh-cht/pol/productlist?KeyWord=cid:000000" target="_self">褲子全系列</a></li>
+                                            </ul>
+                                            <a title="" href="polylulu.com.tw/PDList2.asp?item=all&amp;ob=D3" class="menu_pic"><img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/Banner/02.jpg" title="" alt=""></a>
+                                        </div>
+                                    </div>
+                                    <a title="" href="/zh-cht/pol/productlist?KeyWord=cid:000000"><span>ALL</span><b>全館商品 </b></a>
                                 </li>
                                 <li class="navDott">．</li>
                                 <li>
-                                    <a title="" href="productlist.html"><span>RESTOCK</span><b>熱銷補貨</b></a>
+                                    <a title="" href="https://www.polylulu.com.tw/polyact.asp?actno=2021080501" target="_blank"><span>好友綁定</span><b>好友綁定 </b></a>
                                 </li>
                                 <li class="navDott">．</li>
                                 <li>
-                                    <a title="" href="productsale.html"><span>SALE</span><b>最新優惠</b></b></a>
+                                    <a title="" href="https://polylulu.org/" target="_blank"><i class="hothot">NEW</i><span>POLY BLOG</span><b>波妞部落格 </b></a>
                                 </li>
                                 <li class="navDott">．</li>
                                 <li>
-                                    <a title="" href="https://polylulu.org/"><i class="hothot">NEW</i><span>POLY BLOG</span><b>波妞部落格</b></a>
-                                </li>
-                                <li class="navDott">．</li>
-                                <li>
-                                    <a title="" href="store.html"><span>STORE-INFO</span><b>門市資訊</b></a>
+                                    <a title="" href="/zh-cht/store"><span>STORE-INFO</span><b>門市資訊 </b></a>
                                 </li>
                             </ul>
                         </div>
@@ -129,55 +534,47 @@
                         <div class="nav_list_scroll">
                             <ul>
                                 <li>
-                                    <a title="" href="">新品上市</a>
-                                    <div class="menu_in">
-                                        <a title="" href="productlist.html">▸ 本週新品</a>
-                                        <a title="" href="productlist.html">▸ 0429上市新品</a>
-                                        <a title="" href="productlist.html">▸ 0422上市新品</a>
-                                        <a title="" href="productlist.html">▸ 0415上市新品</a>
-                                        <a title="" href="productlist.html">▸ 全館商品</a>
-                                    </div>
-                                </li>
-                                <li>
-                                    <a title="" href="" style="color:#EC4C74;">SALE</a>
-                                    <div class="menu_in">
-                                        <a title="" href="productsale.html" class="active">▸ SALE夏季特賣【3件49折】</a>
-                                        <a title="" href="productsale.html">▸ SALE夏季特賣【2件69折】</a>
-                                        <a title="" href="productsale.html">▸ 零碼任選4折</a>
-                                        <a title="" href="productsale.html">▸ 新品限時甜甜價</a>
-                                        <a title="" href="productsale.html">▸ 新品上市88折 滿1200免運</a>
-                                        <a title="" href="productsale.html">▸ 蜜大腿涼感雕塑褲-任2件$450/件</a>
-                                    </div>
+                                    <a title="" href="">最新商品</a>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productlist?keyword=pim:1610040001">▸0929新品上市</a></div>
                                 </li>
                                 <li>
                                     <a title="" href="">風格企劃</a>
-                                    <div class="menu_in">
-                                        <a title="" href="style.html">▸ 早秋法式輕質感</a>
-                                        <a title="" href="style.html">▸ 暑假休閒穿搭</a>
-                                        <a title="" href="style.html">▸ LIGHT 涼感系列</a>
-                                        <a title="" href="style.html">▸ Mua! 日常微性感</a>
-                                        <a title="" href="style.html">▸ POLY DENIM 牛仔系列</a>
-                                        <a title="" href="style.html">▸ BARBAPAPA泡泡先生</a>
-                                    </div>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productstyle?keyword=pim:1610040001&amp;actno=20211102">▸Push up!塑型推推丹寧系列</a><a title="" href="/zh-cht/pol/productstyle?keyword=pim:2111160001&amp;actno=20211223">▸Pro_H發熱系列</a></div>
+                                </li>
+                                <li>
+                                    <a title="" style="color:#EC4C74;">SALE</a>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productlist?KeyWord=pi:6599138101&amp;onsale=1">▸初秋新品上市【88折】</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">上衣TOP</a>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productlist?keyword=cid:111100">▸上衣全系列</a><a title="" href="/zh-cht/pol/productlist?keyword=cid:111102">▸雪紡</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">洋裝 DRESS</a>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productlist?keyword=cid:112200">▸洋裝全系列</a></div>
+                                </li>
+                                <li>
+                                    <a title="" href="">下身BOTTOM</a>
+                                    <div class="menu_in"><a title="" href="/zh-cht/pol/productlist?keyword=cid:000000">▸褲子全系列</a></div>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <ul class="navMedia">
                         <li>
-                            <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"></u><i class="icon"><u class="icon-i_media_fb"></u></i></a>
+                            <a title="" href="https://www.facebook.com/PolyLuluTW/" target="_blank"><i class="icon"><u class="icon-i_media_fb"></u></i></a>
                         </li>
                         <li>
-                            <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"></u><i class="icon"><u class="icon-i_media_ig"></u></i></a>
+                            <a title="" href="https://www.instagram.com/polylulu_tw/" target="_blank"><i class="icon"><u class="icon-i_media_ig"></u></i></a>
                         </li>
                         <li>
                             <a title="" href="https://line.me/R/ti/p/%40aal2550w" target="_blank"><i class="icon"><u class="icon-i_media_line"></u></i></a>
                         </li>
                         <li>
-                            <a title="" href="store.html" target="_blank"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
+                            <a title="" href="/zh-cht/store" target="_blank"><i class="icon"><u class="icon-i_media_shop"></u></i></a>
                         </li>
                         <li>
-                            <a title="" href="" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
+                            <a title="" href="https://play.google.com/store/apps/details?id=com.polylulu.app" target="_blank"><i class="icon"><u class="icon-i_media_app"></u></i></a>
                         </li>
                     </ul>
                 </nav>
@@ -208,27 +605,18 @@
                                 <div class="car-items cartDown">
                                     <ul>
                                         <li class="item_pic">
-                                            <a title="" href=""><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" title="" alt="">
+                                            <a title="" href="/zh-CHT/pol/product?saleid=9101041302"><img src="https://app-resource.polylulu.com.tw/app_img/91010413/6AD63264-971C-4637-AC14-25494D667A75.jpg" title="" alt="">
                                             </a>
                                         </li>
                                         <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
-                                    </ul>
-                                    <ul>
-                                        <li class="item_pic">
-                                            <a title="" href=""><img src="https://photo.polylulu.com.tw/Photo/PDImg/93010036/93010036_A06.jpg" title="" alt="">
-                                            </a>
-                                        </li>
-                                        <li class="item_info text-left">
-                                            <span class="item_info_name"> <a title="" href="">素面下擺圓弧後壓摺長袖針織衫</a></span>
-                                            <span class="item_info_sale">還差2件即享85折優惠，<a title="" href="" class="link_underline">挑選更多+</a></span>
-                                            <span class="item_info_other">Color : 白 / Size: L / Item: 99</span>
-                                            <span class="price">NTD.548</span></li>
-                                    </ul>
+                                            <span class="item_info_name"> <a title="" href="/zh-CHT/pol/product?saleid=9101041302">ProH_MIT發熱長袖上衣 中大尺碼上衣</a></span>
 
+                                            <span class="item_info_sale">1117-Pro_H發熱系列任2件85折<a title="" href="/zh-cht/pol/productlist?keyword=pi:6599241901" class="link_underline">挑選更多+</a></span>
+                                            <span class="item_info_sale">購物車商品活動未達折扣標準</span>
+
+                                            <span class="item_info_other">Color:灰/Size:L/Item:1</span>
+                                            <span class="price">NTD.502</span></li>
+                                    </ul>
                                 </div>
                                 <div class="menuCart_total">
                                     <span>共 <b>99</b> 件 </span>
@@ -246,6 +634,7 @@
 
         </div>
     </header>
+
     <!-- Main Content op -->
     <div id="mainArea" class="pageIndex">
         <!-- 大圖 op -->
@@ -276,140 +665,490 @@
         </section>
 
         <!-- 大圖 ed -->
-        <!-- Slider op -->
-        <section id="sliderBN">
-            <div class="hugeTitle mt-5 mb-3">
-                <h1>SPECIAL EVENT</h1>
-                <img src="./Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv">
-            </div>
-            <div class="sliderBN slider">
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_01.jpg">
-                        <figcaption>輕鬆提升辦公室穿搭質感<br>姊穿的不是衣服是質感</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_02.jpg">
-                        <figcaption>2222</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_03.jpg">
-                        <figcaption>3333</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_01.jpg">
-                        <figcaption>4444</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_02.jpg">
-                        <figcaption>5555</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_03.jpg">
-                        <figcaption>6666</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_01.jpg">
-                        <figcaption>7777</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_02.jpg">
-                        <figcaption>8888</figcaption>
-                    </a>
-                </figure>
-                <figure>
-                    <a title="" href="style.html">
-                        <img src="./Source/images/zh-cht/assets/slider-20201111_03.jpg">
-                        <figcaption>9999</figcaption>
-                    </a>
-                </figure>
-            </div>
-            <script>
-                $(function() {
-                    $(".sliderBN").slick({
-                        dots: false,
-                        infinite: false,
-                        speed: 300,
-                        slidesToShow: 4.5,
-                        slidesToScroll: 1,
-                        responsive: [{
-                                breakpoint: 1200,
-                                settings: {
-                                    slidesToShow: 3.5,
-                                    slidesToScroll: 1
-                                }
-                            }, {
-                                breakpoint: 768,
-                                settings: {
-                                    slidesToShow: 2.5,
-                                    slidesToScroll: 1
-                                }
-                            }, {
-                                breakpoint: 480,
-                                settings: {
-                                    slidesToShow: 1.5,
-                                    slidesToScroll: 1,
-                                    arrows: false
-                                }
-                            }
-                            // You can unslick at a given breakpoint now by adding:
-                            // settings: "unslick"
-                            // instead of a settings object
-                        ]
-                    });
-                });
-            </script>
-        </section>
+        <!-- SALE op -->
+        <div class="topEvent">
 
-        <!-- Slider ed -->
+            <!-- SALE區 op-->
+            <style>
+                .topEvent {
+                    background-color: #f9f6e7;
+                }
+                
+                .showPC {
+                    display: block;
+                }
+                
+                .showM {
+                    display: none;
+                }
+                
+                .picBgset {
+                    width: 100%;
+                    background-color: #ebe5d7;
+                }
+                
+                .picBgset .links {
+                    display: flex;
+                    width: 1200px;
+                    margin: 0 auto;
+                }
+                
+                .picBgset .links a {
+                    width: 100%;
+                    display: inline-block;
+                    /* border: 1px solid #f00; */
+                }
+                
+                .picBgset.bg01 {
+                    background: url(https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-pc-01.jpg) no-repeat center bottom;
+                    height: 141px;
+                }
+                
+                .picBgset.bg02 {
+                    background: url(https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-pc-02.jpg) no-repeat center top;
+                }
+                
+                .picBgset.bg02 .links a {
+                    height: 545px;
+                }
+                
+                .picBgset.bg03 {
+                    background: url(https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-pc-03.jpg) no-repeat center top;
+                }
+                
+                .picBgset.bg03 .links a {
+                    height: 652px;
+                }
+                
+                @media (max-width: 1199px) {
+                    .showPC {
+                        display: block;
+                    }
+                    .showM {
+                        display: none;
+                    }
+                    .topEvent {
+                        background-color: #f9f6e7;
+                    }
+                    .sliderNew_title {
+                        color: #f9f6e7;
+                        font-size: 18px;
+                        font-family: "Baskerville Old Face", "Times New Roman", Times, serif !important;
+                        padding: 0;
+                        text-align: center;
+                    }
+                    .picBgset .links {
+                        width: 100% !important;
+                    }
+                    .picBgset,
+                    .picBgset .links a {
+                        height: inherit !important;
+                    }
+                    .picBgset img,
+                    .picBgset .links a img {
+                        width: 100%;
+                    }
+                }
+                
+                @media (max-width: 767px) {
+                    .showPC {
+                        display: none;
+                    }
+                    .showM {
+                        display: block !important;
+                    }
+                    .topEvent {
+                        background-color: #f9f6e7;
+                    }
+                    .sliderNew_title {
+                        color: #f9f6e7;
+                        font-size: 18px;
+                        font-family: "Baskerville Old Face", "Times New Roman", Times, serif !important;
+                        padding: 0;
+                        text-align: center;
+                    }
+                    .picBgset .links {
+                        width: 100% !important;
+                    }
+                    .picBgset,
+                    .picBgset .links a {
+                        height: inherit !important;
+                    }
+                    .picBgset img,
+                    .picBgset .links a img {
+                        width: 100%;
+                    }
+                }
+            </style>
+            <div class="picBgset bg01">
+                <img src="https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-m-01.jpg" alt="" class="showM">
+            </div>
+            <div class="picBgset bg02">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599264301">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-m-02.jpg" alt="" class="showM">
+                    </a>
+                </div>
+            </div>
+            <div class="picBgset bg03">
+                <div class="links">
+                    <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599264101">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/indexSale-20220323-m-03.jpg" alt="" class="showM">
+                    </a>
+                </div>
+            </div>
+            <!-- SALE區 ed-->
+            <!-- 分類入口 op-->
+            <style>
+                .bg_intro {
+                    display: flex;
+                    flex-wrap: wrap;
+                    width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px 0;
+                }
+                
+                .bg_intro a {
+                    flex-basis: 25%;
+                    padding: 10px;
+                    box-sizing: border-box;
+                }
+                
+                .bg_intro a img {
+                    width: 100%;
+                }
+                
+                @media (max-width: 1199px) {
+                    .bg_intro {
+                        width: 100%;
+                    }
+                    .bg_intro {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        padding: 2vw;
+                        box-sizing: border-box;
+                    }
+                    .bg_intro a {
+                        flex-basis: 25%;
+                        padding: 1vw;
+                        box-sizing: border-box;
+                    }
+                    .bg_intro a img {
+                        width: 100%;
+                    }
+                }
+                
+                @media (max-width: 767px) {
+                    .bg_intro a {
+                        flex-basis: 50%;
+                        padding: 3vw;
+                        box-sizing: border-box;
+                    }
+                }
+            </style>
+            <div class="bg_intro">
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=111100&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_01.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=113300&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_02.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022020701&keyword=pim:2202070001"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_03.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=226632&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_04.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=111104&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_05.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=112200&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_06.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=226600&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_07.jpg" alt="">
+                </a>
+                <a href="https://www.polylulu.com.tw/PDList2.asp?cid=225500&ob=D3"><img src="https://photo.polylulu.com.tw/photo/act/intro_pic/intro_08.jpg" alt="">
+                </a>
+            </div>
+            <!-- 分類入口 ed-->
+
+            <!--  sp event Banner op -->
+            <style>
+                [class^="section-new"],
+                [class*="section-new"] {
+                    margin-top: 0;
+                    padding-top: 0;
+                }
+                
+                .section-new {
+                    border-bottom: 0;
+                }
+                
+                #section-banner-big {
+                    max-width: 100% !important;
+                    margin-top: -43px;
+                }
+                
+                @media (min-width: 1200px) {
+                    #section-banner-big {
+                        max-width: 1200px !important;
+                        margin-left: auto;
+                        margin-right: auto;
+                    }
+                }
+                
+                #section-banner-big img {
+                    width: 100%;
+                    max-width: inherit !important;
+                    height: auto;
+                }
+                
+                .slick-list {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                .index-carousel-big {
+                    max-width: 100%;
+                }
+                
+                .body {
+                    background-color: transparent;
+                }
+                
+                .topEvent {
+                    position: relative;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    margin-top: -40px;
+                }
+                
+                .headings {
+                    font-weight: normal;
+                    text-align: center;
+                }
+                
+                .headings>h3 {
+                    display: inline-block;
+                    border-bottom: 1px solid #333;
+                    font-family: CenturyGothic, AppleGothic, "Trebuchet MS", "PingFang TC", "Microsoft JhengHei", sans-serif !important;
+                }
+                /*special event*/
+                
+                .section-new {
+                    background-color: #faf9f4;
+                }
+                
+                .banner-special2_bg {
+                    margin-top: 0;
+                }
+                
+                .banner-special2 {
+                    width: 1200px;
+                    margin: 0 auto;
+                    /* border: 1px solid #f00; */
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                }
+                
+                .banner-special2 figure {
+                    flex-basis: 33%;
+                    margin: 0;
+                    margin-bottom: 74px;
+                }
+                
+                .banner-special2 figure a {
+                    display: block;
+                }
+                
+                .sliderNew_title {
+                    background: #faf9f4 url(https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-00.jpg)no-repeat center bottom;
+                    height: 131px;
+                }
+                
+                @media (max-width: 1199px) {
+                    .wrapper2 {
+                        padding: 0 15px;
+                        background-color: #faf9f4;
+                        margin-top: 0 !important;
+                    }
+                    .banner-special2 {
+                        width: 100%;
+                        margin: 0;
+                        padding-bottom: 30px;
+                    }
+                    .banner-special2 figure {
+                        flex-basis: 33.3333%;
+                        display: block;
+                        margin: 0;
+                        padding: 15px 10px;
+                    }
+                    .banner-special2 figure a img {
+                        width: 100% !important;
+                    }
+                }
+                
+                @media (max-width: 767px) {
+                    .wrapper2 {
+                        padding: 0 15px;
+                        background-color: #faf9f4;
+                        margin-top: 0 !important;
+                    }
+                    .banner-special2 {
+                        width: 360vw;
+                        justify-content: start;
+                        flex-wrap: nowrap;
+                        padding-bottom: 10vw;
+                    }
+                    .banner-special2_bg {
+                        overflow-x: scroll;
+                        /* margin-top: 0; */
+                    }
+                    .banner-special2 figure {
+                        flex-basis: 57vw;
+                        display: block;
+                        margin-right: 5vw;
+                        padding: 0;
+                        /* height: 60vw; */
+                    }
+                    .banner-special2 figure a {
+                        width: 100% !important;
+                        display: block;
+                    }
+                    .banner-special2 figure a img {
+                        width: 100% !important;
+                    }
+                    .sliderNew_title {
+                        background: #faf9f4 url(https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-00.jpg)no-repeat center bottom;
+                        background-size: 100% auto;
+                        height: 81px;
+                    }
+                }
+            </style>
+        </div>
+        <section id="section-new" class="section-new wrapper2">
+            <div class="wrapper2_in">
+                <h3 class="sliderNew_title" style="margin-top: 0;"></h3>
+                <div class="banner-special2_bg">
+                    <div class="banner-special2">
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022032201&keyword=pim:2203220003">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-01.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-01.jpg" class="showM" />
+                            </a>
+                        </figure>
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022021501&keyword=pim:2102020002">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-02.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-02.jpg" class="showM" />
+                            </a>
+                        </figure>
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-03.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-03.jpg" class="showM" />
+
+                            </a>
+                        </figure>
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022012402&keyword=pim:2202070002">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-04.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-04.jpg" class="showM" />
+
+                            </a>
+                        </figure>
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022021502&keyword=pim:2202150001">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-05.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-05.jpg" class="showM" />
+                            </a>
+                        </figure>
+                        <figure>
+                            <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022020701&keyword=pim:2202070001">
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-pc-06.jpg" class="showPC" />
+                                <img src="https://photo.polylulu.com.tw/photo/act/20220323/slider-20220323-m-06.jpg" class="showM" />
+                            </a>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        <!-- SALE ed -->
 
         <!-- 自由版型 PC op -->
         <section id="eventBN">
-            <span class="arrow_down"><u class="icon-i_down"></u></span>
+            <span class="arrow_down" style="background-color: #817b80;color: #faf9f4;"><u class="icon-i_down"></u></span>
             <div class="eventBN_pc">
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s" style="text-align: center; background-color: #ffffff;">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-pc-00.jpg" alt="" srcset="" style="margin: 0 auto;" />
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=pim:2203220001&OB=D3">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-01.gif" />
+                    </a>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-pc-01.jpg" alt="" srcset="" />
+                    <div class="bg111">
+                        <style>
+                            .bg111 {
+                                background: url(https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-02_bg.jpg)no-repeat 0 0;
+                                background-attachment: fixed;
+                                background-size: 100% auto;
+                            }
+                        </style>
+                        <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599264001">
+                            <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-02.png" />
+                        </a>
+                    </div>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-pc-02.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022021502&keyword=pim:2202150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-03.gif" />
+                    </a>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-pc-03.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-04.jpg" />
+                    </a>
+                </div>
+                <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-06.gif" />
+                    </a>
                 </div>
             </div>
             <div class="eventBN_m">
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-m-00.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-pc-05.jpg" />
+                    </a>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-m-01.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/PDList2.asp?keyword=pim:2203220001&OB=D3">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-01.gif" />
+                    </a>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-m-02.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/PDSalev2.asp?pi=6599264001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-02.png" />
+                    </a>
                 </div>
                 <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-                    <img src="./Source/images/zh-cht/assets/index-20201111-m-03.jpg" alt="" srcset="" />
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022021502&keyword=pim:2202150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-03.gif" />
+                    </a>
+                </div>
+                <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-04.jpg" />
+                    </a>
+                </div>
+                <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-05.jpg" />
+                    </a>
+                </div>
+                <div class="img_item float-right wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
+                    <a href="https://www.polylulu.com.tw/polyact.asp?actno=2022030102&keyword=pim:2103150001">
+                        <img src="https://photo.polylulu.com.tw/photo/act/20220323/index-20220323-m-06.gif" />
+                    </a>
                 </div>
             </div>
-
-
         </section>
         <!-- 自由版型 ed -->
         <!-- IG op -->
@@ -428,214 +1167,76 @@
                     </div>
                 </div>
                 <div class="wrap mt-5">
-                    <!-- IG-Plugin op -->
-                    <script src="//foursixty.com/media/scripts/fs.embed.v2.5.js" data-feed-id="poly-lulu" data-theme="showcase_v2_5" data-open-links-in-same-page="true" data-connector-filter="44440,44441" data-page-size="10"></script>
+                    <!-- IG-info op -->
                     <style>
-                        .fs-has-links::after {
-                            padding: 17px 25.5px;
-                            background-color: #ffffff;
-                            color: rgba(0, 0, 0, 0.8);
-                            content: "去逛逛"
-                        }
-                        
-                        .fs-desktop .fs-entry-container {
-                            width: 20% !important;
-                            padding-top: 20% !important;
-                        }
-                        
-                        .fs-mobile .fs-entry-container {
-                            width: 50% !important;
-                            padding-top: 50% !important
-                        }
-                        
-                        .fs-wrapper div.fs-text-container .fs-entry-title,
-                        div.fs-detail-title {
-                            font-family: Times New Roman, serif;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px
-                        }
-                        
-                        div.fs-text-container .fs-entry-date,
-                        div.fs-detail-container .fs-post-info,
-                        div.fs-wrapper div.fs-has-links::after,
-                        .fs-text-product,
-                        .fs-overlink-text {
-                            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
-                            font-style: normal;
-                            font-weight: normal;
-                            font-size: 14px
-                        }
-                        
-                        .fs-wrapper div.fs-text-container * {
-                            color: #ffffff
-                        }
-                        
-                        .fs-wrapper div.fs-text-container {
-                            background-color: rgba(0, 0, 0, 0.8);
-                            margin: 0px
-                        }
-                        
-                        div.fs-entry-date {
-                            display: none
-                        }
-                        
-                        div.fs-entry-title {
-                            display: none
-                        }
-                        
-                        .fs-wrapper div.fs-timeline-entry {
-                            margin: 6px
-                        }
-                    </style>
-                    <!-- 增加 CSS op -->
-                    <style>
-                        @media screen and (min-width:1200px) {
-                            #section-instagram {
-                                z-index: 99;
-                            }
-                            #section-instagram .fs-wrapper {
-                                width: 1200px;
-                                position: relative;
-                                z-index: inherit;
-                                margin-left: auto;
-                                margin-right: auto;
-                            }
-                        }
-                        
-                        @media screen and (min-width:768px) and (max-width:1199px) {
-                            #section-instagram .fs-wrapper {
-                                width: 100%;
-                                padding-left: 2%;
-                                padding-right: 2%;
-                            }
-                            .fs-entry-container,
-                            .fs-mobile .fs-entry-container,
-                            .fs-desktop .fs-entry-container {
-                                width: 33.33333% !important;
-                                padding-top: 33.33333% !important
-                            }
-                        }
-                        
-                        @media screen and (max-width:767px) {
-                            .fs-wrapper div.fs-timeline-entry {
-                                margin: 0;
-                            }
-                            .fs-wrapper {
-                                width: 100%;
-                                position: relative;
-                                z-index: inherit;
-                                padding-left: 3.5%;
-                                padding-right: 3.5%;
-                                /* border: 1px solid #f00 !important; */
-                            }
-                            .fs-timeline-entry {
-                                border: 6px solid #f5f5f5;
-                            }
-                            .fs-detail-content img {
-                                width: auto !important;
-                            }
-                            .fs-mobile .fs-detail-nav-button,
-                            .fs-mobile #fs-next-post,
-                            .fs-mobile #fs-prev-post,
-                            .fs-mobile #fs-detail-close {
-                                width: 30px;
+                        @keyframes picHover {
+                            0% {
                                 padding: 0;
-                                margin-top: 5vw;
                             }
-                            .fs-detail-nav-bar-close {
-                                width: 30px;
-                                position: absolute;
-                                top: 0;
-                                right: 20px;
+                            100% {
+                                padding: 10px;
+                            }
+                        }
+                        
+                        .block-instagram {
+                            display: flex;
+                            flex-wrap: wrap;
+                        }
+                        
+                        .i-item {
+                            flex-basis: 33.3333%;
+                            padding: 5px;
+                        }
+                        
+                        .i-item a {
+                            display: block;
+                            background-color: #ffffff;
+                            border: 1px solid #fff;
+                        }
+                        
+                        .i-item a:hover {
+                            animation: picHover .3s forwards ease;
+                            border: 1px solid #eee;
+                        }
+                        
+                        .i-item a img {
+                            width: 100%;
+                        }
+                        
+                        @media (max-width: 767px) {
+                            .i-item {
+                                flex-basis: 50%;
+                            }
+                            .i-item a:hover {
+                                animation: inherit;
                             }
                         }
                     </style>
-                    <!-- IG-Plugin op -->
+                    <div class="block-instagram">
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-01.jpg" /></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-02.jpg" /></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-03.jpg" /></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-04.jpg" /></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-05.jpg" /></a>
+                        </div>
+                        <div class="i-item">
+                            <a href="https://www.instagram.com/polylulu_tw/" target="_blank" rel="noopener noreferrer"><img src="https://photo.polylulu.com.tw/photo/act/ig_pic/ig-20220309-06.jpg" /></a>
+                        </div>
+                    </div>
+                    <!-- IG-info op -->
                 </div>
             </div>
         </section>
         <!-- IG ed -->
-        <!-- NEW ARRIVALS op-->
-        <section id="areaNEWpd" class="pb-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
-            <div class="container">
-                <div class="hugeTitle mt-5 mb-3">
-                    <h1>NEW ARRIVALS</h1>
-                    <img src="./Source/images/zh-cht/icons/i_vvv.svg" alt="" class="icon_vvv">
-                </div>
-                <div class="new_items">
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/01.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/02.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/03.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/04.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/05.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/06.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/07.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/08.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                    <figure>
-                        <a title="" href="product.html">
-                            <img src="https://photo.polylulu.com.tw/Photo/PolyLuLu/Index/NewArrival/09.jpg">
-                            <figcaption>
-                                <div>親膚舒適寬領坑紋長袖上衣</div> <span class="price-old">NT.680</span> <span class="price-sale">NTD.598</span> <span class="tag-sale">SHOP</span> </figcaption>
-                        </a>
-                    </figure>
-                </div>
-                <div class="btnMore">
-                    <a title="" href="" class="btn btn-outline-primary"> <span>MORE LOOKS <i class="icon"><u class="icon-i_gotop"></u></i></span>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-        <!-- NEW ARRIVALS ed-->
         <!-- BEST SELLERS op -->
         <section id="areaBEST" class="pt-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
             <div class="hugeTitle mb-3">
@@ -896,6 +1497,8 @@
             </div>
         </section>
         <!-- BEST SELLERS ed -->
+        <!-- NEW ARRIVALS op-->
+        <!-- NEW ARRIVALS ed-->
 
         <!-- BODY SHAPE op-->
         <section id="areaSHAPE" class="py-5 wow fadeIn" data-wow-duration="1.2s" data-wow-delay="0.3s">
@@ -910,8 +1513,8 @@
                         <ul>
                             <li>
                                 <figure>
-                                    <a title="" href="style.html">
-                                        <img src="./Source/images/zh-cht/icons/body_type01.png" title="" alt="">
+                                    <a title="" href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040001&actno=4445367B-3439-4432-382D-354139412D34">
+                                        <img src="./Source/images/zh-cht/icons/body_type01.jpg" title="" alt="">
                                         <figcaption>
                                             <h4 class="h4">長方形</h4>
                                             <p>
@@ -923,16 +1526,11 @@
                             </li>
                             <li>
                                 <figure>
-                                    <a title="" href="style.html">
-                                        <img src="./Source/images/zh-cht/icons/body_type02.png" title="" alt="">
+                                    <a title="" href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1910220002&actno=9E9567B6-004E-4BFE-9348-893167399639">
+                                        <img src="./Source/images/zh-cht/icons/body_type02.jpg" title="" alt="">
                                         <figcaption>
                                             <h4 class="h4">西洋梨形</h4>
-                                            <p>
-                                                <u class="h4">PEAR</u>上半身較為纖瘦
-                                                <br>較小的胸圍
-                                                <br>纖細的腰圍
-                                                <br>較豐滿的臀部線條
-                                                <span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                            <p><u class="h4">PEAR</u>上半身較為纖瘦 <br>較小的胸圍 <br>纖細的腰圍 <br>較豐滿的臀部線條 <span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
 
                                         </figcaption>
                                     </a>
@@ -940,38 +1538,33 @@
                             </li>
                             <li>
                                 <figure>
-                                    <a title="" href="style.html">
-                                        <img src="./Source/images/zh-cht/icons/body_type03.png" title="" alt="">
+                                    <a title="" href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040003&actno=8189CF48-5C5A-4EF6-90F3-120CCFB25219">
+                                        <img src="./Source/images/zh-cht/icons/body_type03.jpg" title="" alt="">
                                         <figcaption>
                                             <h4 class="h4">草莓型</h4>
-                                            <p>
-                                                <u class="h4">STRAWBERRY</u> 較寬的肩膀
-                                                <br>豐滿的胸圍<br>纖細的腰圍<br>較小的臀圍<br>修長的腿部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span>
-                                            </p>
+                                            <p><u class="h4">STRAWBERRY</u> 較寬的肩膀 <br>豐滿的胸圍<br>纖細的腰圍<br>較小的臀圍<br>修長的腿部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
                                         </figcaption>
                                     </a>
                                 </figure>
                             </li>
                             <li>
                                 <figure>
-                                    <a title="" href="style.html">
-                                        <img src="./Source/images/zh-cht/icons/body_type04.png" title="" alt="">
+                                    <a title="" href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040004&actno=F96C791F-D260-4AC5-8094-3E7228B99BD2">
+                                        <img src="./Source/images/zh-cht/icons/body_type04.jpg" title="" alt="">
                                         <figcaption>
                                             <h4 class="h4">沙漏型</h4>
-                                            <p>
-                                                <u class="h4">HOURGLASS</u> 肩膀與臀部大致等寬<br>非常纖細的腰圍<br>較大的胸圍<br>肉感的臀部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                            <p><u class="h4">HOURGLASS</u> 肩膀與臀部大致等寬<br>非常纖細的腰圍<br>較大的胸圍<br>肉感的臀部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
                                         </figcaption>
                                     </a>
                                 </figure>
                             </li>
                             <li>
                                 <figure>
-                                    <a title="" href="style.html">
-                                        <img src="./Source/images/zh-cht/icons/body_type05.png" title="" alt="">
+                                    <a title="" href="http://test.polylulu.com.tw/zh-cht/pol/productstyle?KeyWord=pim:1610040005&actno=F42882A6-9E94-4EBE-B4EA-678E96ED0754">
+                                        <img src="./Source/images/zh-cht/icons/body_type05.jpg" title="" alt="">
                                         <figcaption>
                                             <h4 class="h4">橢圓形</h4>
-                                            <p>
-                                                <u class="h4">OVAL</u> 明顯的中段<br>較大的胸圍<br>較寬的臀部<br>纖細的腿部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
+                                            <p><u class="h4">OVAL</u> 明顯的中段<br>較大的胸圍<br>較寬的臀部<br>纖細的腿部<span class="btn btn-outline-primary btn-sm mt-3">SHOP</span></p>
                                         </figcaption>
                                     </a>
                                 </figure>
@@ -1086,6 +1679,32 @@
 <script src="./Source/js/zh-cht/main.js"></script>
 <script type="text/javascript">
     new WOW().init();
+
+    //<!-- 蓋版 + 置頂的 JS //// op -->
+    var cookie01 = 0; //蓋板
+    var cookie02 = 0; //置頂
+    $(document).ready(function() {
+        if (cookie01 == 0) { //有cookie-蓋版
+            $("#adModal").modal('hide');
+            // console.log("蓋板出現過了!");
+        } else { //沒cookie-蓋版
+            $("#adModal").modal('show');
+        }
+
+        if (cookie02 == 0) { //有cookie置頂
+            // console.log("置頂出現過了!");
+        } else { //沒cookie
+            $('.toptopBN').addClass('toptopBNIn');
+            $("#mainArea").addClass('moveDown');
+            $('#closeAD').on('click', function() {
+                $('.toptopBN').addClass('toptopBNOut');
+                $('.toptopBN').fadeOut(300);
+                $("#mainArea").removeClass('moveDown');
+                $('.toptopBN').removeClass('toptopBNIn');
+            });
+        }
+    });
+    //<!-- 蓋版 + 置頂的 JS //// -->
 </script>
 
 </html>

@@ -1,0 +1,194 @@
+{
+    "Result": {
+        "Item1": "6599049201",
+        "Item1Name": "春品 79折",
+        "Item2": "",
+        "Item2Name": "",
+        "Item3": "",
+        "Item3Name": "",
+        "ProductList": [{
+                "ProductID": "66230302",
+                "SaleID": "6623030201",
+                "ProductTitle": "假兩件百摺腰鬆緊內搭長褲 中大尺碼褲子",
+                "SalePrice": 390.0,
+                "OriginalPrice": 390.0,
+                "OnSale": true,
+                "PhotoInfo": { "url": "https://app-resource.polylulu.com.tw/app_img/66230302/66230302.jpg", "width": 0, "height": 0, "photo_type": "" },
+                "PhotoInfoA": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/66230302/66230302.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                },
+                "SizeInfoList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "3XL",
+                        "SizeTitle": "3XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    }
+                ],
+                "ColorID": "A06",
+                "ColorName": "灰",
+                "IsKeep": null,
+                "FavoriteID": "",
+                "SellingStatus": 0
+            },
+            {
+                "ProductID": "11050552",
+                "SaleID": "1105055201",
+                "ProductTitle": "下擺剪接蕾絲緹花針織長袖上衣",
+                "SalePrice": 480.0,
+                "OriginalPrice": 480.0,
+                "OnSale": false,
+                "PhotoInfo": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/11050552/11050552_A33.jpg",
+                    "width": 320,
+                    "height": 417,
+                    "photo_type": "02"
+                },
+                "PhotoInfoA": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/11050552/11050552-A33.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                },
+                "SizeInfoList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    }
+                ],
+                "ColorID": "A33",
+                "ColorName": "黑",
+                "IsKeep": null,
+                "FavoriteID": "",
+                "SellingStatus": 0
+            },
+            {
+                "ProductID": "11050552",
+                "SaleID": "1105055202",
+                "ProductTitle": "下擺剪接蕾絲緹花針織長袖上衣",
+                "SalePrice": 480.0,
+                "OriginalPrice": 480.0,
+                "OnSale": false,
+                "PhotoInfo": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/11050552/11050552_A35.jpg",
+                    "width": 320,
+                    "height": 417,
+                    "photo_type": "02"
+                },
+                "PhotoInfoA": {
+                    "url": "https://app-resource.polylulu.com.tw/app_img/11050552/11050552-A35.jpg",
+                    "width": 600,
+                    "height": 600,
+                    "photo_type": "03"
+                },
+                "SizeInfoList": [{
+                        "SizeID": "L",
+                        "SizeTitle": "L",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "XL",
+                        "SizeTitle": "XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    },
+                    {
+                        "SizeID": "2XL",
+                        "SizeTitle": "2XL",
+                        "StockNum": 10,
+                        "IsKeep": null,
+                        "IsPreOrder": false,
+                        "SellingStatus": null,
+                        "SellingMsgTitle": "",
+                        "SellingMsgBody": ""
+                    }
+                ],
+                "ColorID": "A35",
+                "ColorName": "綠",
+                "IsKeep": null,
+                "FavoriteID": "",
+                "SellingStatus": 0
+            }
+        ],
+        "IsChoose": true,
+        "comboNum": 2,
+        "YAGDC": 79,
+        "YA17": 999999999,
+        "NTHDIS": 100,
+        "Next": -1,
+        "Counts": 3,
+        "Pages": 1
+    },
+    "Status": { "code": "00", "info": "" },
+    "Alert": null
+}

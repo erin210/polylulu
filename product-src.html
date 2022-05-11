@@ -7,7 +7,6 @@
     <title>PolyLulu</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link href="./Source/css/zh-cht/vendor/animate.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/fonts/fontawesome/all.min.css?20201012" rel="stylesheet" />
     <link href="./Source/css/zh-cht/fonts/icomoon/icons.css?20201012" rel="stylesheet" />
@@ -16,21 +15,11 @@
     <link href="./Source/css/zh-cht/vendor/magnific-popup.all.min.css" rel="stylesheet" />
     <link href="./Source/css/zh-cht/vendor/magnific-popup.css" rel="stylesheet" />
     <link href="./Source/css/zh-cht/main.css?20201012" rel="stylesheet" />
-    <script src="./Source/js/zh-cht/vendor/jquery.sticky-sidebar.min.js"></script>
     <script src="./Source/js/zh-cht/vendor/jquery-3.3.1.min.js?20190506"></script>
-    <!-- <script>
-        window.onload = function() {
-            setInterval(function() {
-                window.location.reload();
-            }, 50000);
-            alert("333");
-        }
-    </script> -->
 
 </head>
 
 <body class="body_white">
-
     <div id="goTopMenu">
         <ul class="goTop_pc">
             <li>
@@ -442,7 +431,7 @@
                         <small class="pd_note remind my-2"><i class="icon icon_note">!</i>本商品版型正常</small>
                         <div class="pd_qty">
                             <div class="qty_mask"><span>請先選擇尺寸</span></div>
-                            <input id="pdQtyNum" name="pdQtyNum" type="text" value="" data-bts-step="1" data-bts-button-down-class="btn btn-outline-primary" data-bts-button-up-class="btn btn-outline-primary" />
+                            <input id="pdQtyNum" name="pdQtyNum" type="text" value="1" data-bts-step="1" data-bts-button-down-class="btn btn-outline-primary" data-bts-button-up-class="btn btn-outline-primary" />
                         </div>
 
                         <small class="pd_stock_remind" style="display: none;"></small>
@@ -802,13 +791,14 @@
                     </nav>
                 </div>
                 <div class="main_pic">
-                    <!-- <div id="section-youtube-vid" class="section-youtube-vid" style="margin-top:0; margin-bottom:1.5em">
+                    <div id="section-youtube-vid" class="section-youtube-vid" style="margin-top:0; margin-bottom:1.5em">
                         <iframe src="https://www.youtube.com/embed/0z5ROGupbDk?&autoplay=1&loop=1&playlist=0z5ROGupbDk&showinfo=0&showinfo=0&mute=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div> -->
+                    </div>
                     <p id="mainPhoto"><img src="https://photo.polylulu.com.tw/photo/pdimg/92310819/92310819-A26.jpg" title="" alt=""></p>
                 </div>
                 <div class="other_pic">
                 </div>
+
             </div>
 
         </div>
@@ -970,109 +960,6 @@
 <script src="./Source/js/zh-cht/vendor/jquery.magnific-popup.min.js"></script>
 <script src="./Source/js/zh-cht/vendor/sticky-sidebar.min.js"></script>
 <script src="./Source/js/zh-cht/main.js"></script>
-<script>
-    // window.addEventListener('resize', start);
-
-    // function start() {
-    //     var wwwWidth = document.documentElement.clientWidth;
-
-    //     if ($(window).width() <= 767) {
-    //         alert("phone");
-    //     }
-    // }
-    window.onload = function() {
-            var sidebar = new StickySidebar('#sidebar', { // 要固定的側邊欄
-                containerSelector: '#main-content', // 側邊欄外面的區塊
-                innerWrapperSelector: '.sidebar__inner',
-                topSpacing: 110, // 距離頂部 20px，可理解成 padding-top:20px
-                bottomSpacing: 0, // 距離底部 20px，可理解成 padding-bottom:20px
-                minWidth: 767
-            });
-            var sidebar2 = new StickySidebar('#sidebar-2', { // 要固定的側邊欄
-                containerSelector: '#main-content', // 側邊欄外面的區塊
-                innerWrapperSelector: '.sidebar__inner',
-                topSpacing: 100, // 距離頂部 20px，可理解成 padding-top:20px
-                bottomSpacing: 0, // 距離底部 20px，可理解成 padding-bottom:20px
-                minWidth: 767
-            });
-            setInterval(function() {
-                var wwwWidth = document.documentElement.clientWidth;
-                if ($(window).width() <= 767) {} else {
-                    window.location.reload();
-
-                }
-            }, 90000000);
-            // alert("333");
-        }
-        // $(window).resize(function() {
-
-    //     var wdth = $(window).width();
-    //     alert(wdth);
-
-
-
-    // });
-    if ($(window).width() > 768) {
-        $('.popup-with-form').magnificPopup({
-            type: 'inline',
-            preloader: false,
-            focus: '#name',
-            callbacks: {
-                beforeOpen: function() {
-                    if ($(window).width() < 700) {
-                        this.st.focus = false;
-                    } else {
-                        this.st.focus = '#name';
-                    }
-                }
-            }
-        });
-        $(".sliderPD").slick({
-            dots: false,
-            infinite: false,
-            speed: 300,
-            slidesToShow: 4.5,
-            slidesToScroll: 1,
-            responsive: [{
-                breakpoint: 1200,
-                settings: {
-                    slidesToShow: 3.5,
-                    slidesToScroll: 1
-                }
-            }, {
-                breakpoint: 767,
-                settings: {
-                    slidesToShow: 2.5,
-                    slidesToScroll: 1
-                }
-            }, {
-                breakpoint: 480,
-                settings: {
-                    slidesToShow: 1.5,
-                    slidesToScroll: 1,
-                    arrows: false
-                }
-            }]
-        });
-
-    } else if ($(window).width() <= 767) {
-        $('.popup_link').click(function() {
-            // $(this).addClass('active').parents('li').siblings().find('.popup_link').removeClass('active');
-            $('.white-popup-block').addClass('mfp-hide').removeClass('pdinfo_show_m');
-            $(this).siblings('.white-popup-block').removeClass('mfp-hide').addClass('pdinfo_show_m');
-            $('.pdOthers').addClass('pdOther_fixed');
-            // $('.goTop_m').hide();
-            if ($(this).hasClass('ContentPlaceHolder1_lookPP')) {
-                $('#ContentPlaceHolder1_lookPP').fadeIn(300).removeClass('mfp-hide').addClass('pdinfo_show_m');
-            }
-        });
-        $('.white-popup-block .btnClose').click(function() {
-            $(this).parents('.white-popup-block').addClass('mfp-hide').removeClass('pdinfo_show_m');
-            // $('.goTop_m').hide();
-        });
-
-    }
-</script>
 <script type="text/javascript">
     var pdArray = {
         "Result": {
@@ -1152,7 +1039,7 @@
                 }, {
                     "SizeID": "2XL",
                     "SizeTitle": "2XL",
-                    "StockNum": 0,
+                    "StockNum": 5,
                     "IsKeep": null,
                     "IsPreOrder": true,
                     "SellingStatus": 2,
@@ -1491,8 +1378,11 @@
     }
 
     //default Qty
-
-
+    var maxLL = 10;
+    $("input[name='pdQtyNum']").TouchSpin({
+        min: 1,
+        max: maxLL
+    });
 
 
     //import produst JSON
@@ -1593,24 +1483,9 @@
     }
 
 
-
     function selectSIZE() {
-        var maxLL = 10;
-        $("input[name='pdQtyNum']").TouchSpin({
-            min: 1,
-            max: maxLL
-        });
-
         $('#pdSIZE li').on("click", function() {
-            if ($(this).find(".size_name").attr("data-qty") == 0) {
-                console.log("000");
-                $("input[name='pdQtyNum'],.bootstrap-touchspin-down,.bootstrap-touchspin-up").attr("disabled", true);
-
-            } else {
-                $("input[name='pdQtyNum'],.bootstrap-touchspin-down,.bootstrap-touchspin-up").attr("disabled", false);
-            }
             $("#pdQtyNum").val(1);
-
 
             var sizeBTN = $(this).children(".size_name");
             var pdStock = Number($(this).find(".size_name").attr("data-qty"));
@@ -1659,12 +1534,84 @@
     var qtyVal = $("input[name='pdQtyNum']").val();
     $('#pdSIZE').attr("data-totalqty", qtyVal);
 
-
-
-    // alert("88888");
     //----
+    if ($(window).width() > 767) {
 
+        var sidebar = new StickySidebar('#sidebar', { // 要固定的側邊欄
+            containerSelector: '#main-content', // 側邊欄外面的區塊
+            innerWrapperSelector: '.sidebar__inner',
+            topSpacing: 70, // 距離頂部 20px，可理解成 padding-top:20px
+            bottomSpacing: 0 // 距離底部 20px，可理解成 padding-bottom:20px
+        });
+        var sidebar2 = new StickySidebar('#sidebar-2', { // 要固定的側邊欄
+            containerSelector: '#main-content', // 側邊欄外面的區塊
+            innerWrapperSelector: '.sidebar__inner',
+            topSpacing: 30, // 距離頂部 20px，可理解成 padding-top:20px
+            bottomSpacing: 0 // 距離底部 20px，可理解成 padding-bottom:20px
+        });
+        $(document).ready(function() {
+            $('.popup-with-form').magnificPopup({
+                type: 'inline',
+                preloader: false,
+                focus: '#name',
 
+                // When elemened is focused, some mobile browsers in some cases zoom in
+                // It looks not nice, so we disable it:
+                callbacks: {
+                    beforeOpen: function() {
+                        if ($(window).width() < 700) {
+                            this.st.focus = false;
+                        } else {
+                            this.st.focus = '#name';
+                        }
+                    }
+                }
+            });
+        });
+        $(".sliderPD").slick({
+            dots: false,
+            infinite: false,
+            speed: 300,
+            slidesToShow: 4.5,
+            slidesToScroll: 1,
+            responsive: [{
+                breakpoint: 1200,
+                settings: {
+                    slidesToShow: 3.5,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 767,
+                settings: {
+                    slidesToShow: 2.5,
+                    slidesToScroll: 1
+                }
+            }, {
+                breakpoint: 480,
+                settings: {
+                    slidesToShow: 1.5,
+                    slidesToScroll: 1,
+                    arrows: false
+                }
+            }]
+        });
+    } else if ($(window).width() <= 767) {
+
+        $('.popup_link').click(function() {
+            $(this).addClass('active').parents('li').siblings().find('.popup_link').removeClass('active');
+            $('.white-popup-block').addClass('mfp-hide').removeClass('pdinfo_show_m');
+            $(this).siblings('.white-popup-block').removeClass('mfp-hide').addClass('pdinfo_show_m');
+            $('.pdOthers').addClass('pdOther_fixed');
+            $('.goTop_m').hide();
+            if ($(this).hasClass('ContentPlaceHolder1_lookPP')) {
+                $('#ContentPlaceHolder1_lookPP').fadeIn(300).removeClass('mfp-hide').addClass('pdinfo_show_m');
+            }
+        });
+        $('.white-popup-block .btnClose').click(function() {
+            $(this).parents('.white-popup-block').addClass('mfp-hide').removeClass('pdinfo_show_m');
+            $('.goTop_m').hide();
+        });
+    }
 
     //---------------------------------------------------------
     //product Page
@@ -1676,7 +1623,5 @@
         }
     });
 </script>
-
-</html>
 
 </html>
